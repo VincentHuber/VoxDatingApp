@@ -183,7 +183,7 @@ export default function AudioScreen({ navigation }) {
             await updateDoc(doc(db, "users", id), {
               audioProfile: audioURL,
             });
-            // navigation.navigate("Audio")
+            navigation.navigate("TabNavigator")
           } else {
             console.log("ID is undefined or null");
           }

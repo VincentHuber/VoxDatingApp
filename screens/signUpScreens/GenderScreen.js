@@ -58,9 +58,9 @@ export default function GenderScreen({ navigation }) {
       await updateDoc(doc(db, "users", id), {
         Gender: gender,
       })
-        .then(() => {
-          console.log("Man gender updated");
-        })
+        // .then(() => {
+        //   console.log("Man gender updated");
+        // })
         .catch((error) => {
           console.log("Man gender not updated : ", error);
         });

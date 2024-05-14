@@ -67,18 +67,18 @@ const LoginScreen = () => {
     setStateSignup(false);
   }, []);
 
-  // Récupération du navigateur actuel avec useNavigation
+  // Initialisation de useNavigation
   const navigation = useNavigation();
 
   //Hook pour rediriger vers Username si on est connecté
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        navigation.navigate("Username");
-      }
-    });
-    return unsubscribe;
-  }, []);
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged((user) => {
+  //     if (user) {
+  //       navigation.navigate("Username");
+  //     }
+  //   });
+  //   return unsubscribe;
+  // }, []);
 
   //Fonction pour s'inscrire
   const handleSignup = async () => {
@@ -114,6 +114,7 @@ const LoginScreen = () => {
         },
         { merge: true }
       );
+      navigation.navigate("Username")
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -127,6 +128,7 @@ const LoginScreen = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        navigation.navigate("TabNavigator")
       })
       .catch((error) => {
         const errorCode = error.code;

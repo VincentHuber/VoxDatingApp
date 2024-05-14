@@ -1,17 +1,32 @@
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginScreen from './screens/LoginScreen';
-import HomeScreen from './screens/HomeScreen';
 import AudioScreen from './screens/signUpScreens/AudioScreen'
 import CityScreen from './screens/signUpScreens/CityScreen'
 import GenderScreen from './screens/signUpScreens/GenderScreen'
 import WishedGenderScreen from './screens/signUpScreens/WishedGenderScreen'
 import UsernameScreen from './screens/signUpScreens/UsernameScreen'
 import AgeScreen from './screens/signUpScreens/AgeScreen';
+import FeedScreen from './screens/TabScreens/FeedScreen';
+import CrushScreen from './screens/TabScreens/CrushScreen';
+import ChatScreen from './screens/TabScreens/ChatScreen';
+import ProfilScreen from './screens/TabScreens/ProfilScreen';
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator()
 
+const TabNavigator = () =>{
+  return(
+    <Tab.Navigator screenOptions = {{headerShown: false}}>
+      <Tab.Screen name= "Feed" component = {FeedScreen}/>
+      <Tab.Screen name = "Crush" component = {CrushScreen}/>
+      <Tab.Screen name = "Chat" component = {ChatScreen}/>
+      <Tab.Screen  name = "Profil" component = {ProfilScreen}/>
+    </Tab.Navigator>
+  )
+}
 
 export default function App() {
   return (
@@ -24,7 +39,7 @@ export default function App() {
       <Stack.Screen  options ={{headerShown:false}} name="WishedGender" component={WishedGenderScreen} />
       <Stack.Screen  options ={{headerShown:false}} name="City" component={CityScreen} />
       <Stack.Screen  options ={{headerShown:false}} name="Audio" component={AudioScreen} />
-      <Stack.Screen  options ={{headerShown:false}} name="Home" component={HomeScreen} />
+      <Stack.Screen  options ={{headerShown:false}} name="TabNavigator" component={TabNavigator} />
     </Stack.Navigator>
   </NavigationContainer>
   );

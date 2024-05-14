@@ -1,9 +1,9 @@
 import { useNavigation } from '@react-navigation/core'
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { auth } from '../firebase'
+import { auth } from '../../firebase'
 
-const HomeScreen = () => {
+const ProfilScreen = () => {
     
   const navigation = useNavigation()
 
@@ -29,7 +29,7 @@ const HomeScreen = () => {
   )
 }
 
-export default HomeScreen
+export default ProfilScreen
 
 const styles = StyleSheet.create({
   container: {
