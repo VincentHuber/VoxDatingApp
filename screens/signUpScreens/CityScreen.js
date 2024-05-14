@@ -14,19 +14,10 @@ import { updateDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
 
 import {
-  setKey,
   setDefaults,
-  setLanguage,
-  setRegion,
   fromAddress,
-  fromLatLng,
-  fromPlaceId,
-  setLocationType,
-  geocode,
-  RequestType,
 } from "react-geocode";
 
-//API KEY = AIzaSyDcBOehuphmGfEVNkKPJInhvIckFdUEL-A
 
 import {
   useFonts,
@@ -53,7 +44,7 @@ export default function CityScreen({ navigation }) {
 
   //Paramètre de google maps API
   setDefaults({
-    key: "AIzaSyDcBOehuphmGfEVNkKPJInhvIckFdUEL-A",
+    key: process.env.EXPO_PUBLIC_apiKey,
     language: "fr", 
     region: "fr", 
   });
@@ -77,8 +68,6 @@ export default function CityScreen({ navigation }) {
     };
     fetchToken();
   }, []);
-
-
 
 
   //MAJ de la location + navigation
@@ -111,8 +100,6 @@ export default function CityScreen({ navigation }) {
     }
   };
   
-
-
 
   //Chargement de la police
   const [fontsLoaded] = useFonts({

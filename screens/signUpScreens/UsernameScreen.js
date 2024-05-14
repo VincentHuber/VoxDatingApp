@@ -136,6 +136,8 @@ import {
   
         <TextInput
           onChangeText={(value) => setUsername(value)}
+          placeholder="Morgan"
+          placeholderTextColor={"#808080"}
           value={username}
           style={{
             backgroundColor: "#292929",
