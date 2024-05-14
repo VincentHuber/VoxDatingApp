@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const CrushScreen = () => {
+const LikesScreen = () => {
   return (
     <View>
-      <Text>CrushScreen</Text>
+      <Text>LikesScreen</Text>
     </View>
   )
 }
 
-export default CrushScreen
+export default LikesScreen
 
 const styles = StyleSheet.create({})
