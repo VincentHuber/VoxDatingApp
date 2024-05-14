@@ -78,6 +78,7 @@ const TabNavigator = () => {
           height: 90,
           left: "50%",
           transform: [{ translateX: -172 }],
+          borderTopWidth: 0,
         },
       }}
     >
@@ -227,7 +228,7 @@ const TabNavigator = () => {
 };
 
 export default function App() {
-  
+
   //Chargement de la police
   const [fontsLoaded] = useFonts({
     Lexend_900Black,
