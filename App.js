@@ -15,7 +15,7 @@ import ChatScreen from "./screens/TabScreens/ChatScreen";
 import ProfilScreen from "./screens/TabScreens/ProfilScreen";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
-import { Octicons } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { BlurView } from "expo-blur";
 
@@ -41,15 +41,15 @@ const MenuBlur = () => {
     <View style={{ flex: 1 }}>
       <View
         style={{
-          width: '100%',
-          height: '100%',
+          width: "100%",
+          height: "100%",
           borderRadius: 17,
-          overflow: 'hidden',
+          overflow: "hidden",
         }}
       >
         <BlurView
           intensity={12}
-          style={{ flex: 1, backgroundColor: ' rgba(255, 255, 255, 0.1)' }}
+          style={{ flex: 1, backgroundColor: " rgba(255, 255, 255, 0.1)" }}
         />
       </View>
     </View>
@@ -113,7 +113,6 @@ const TabNavigator = () => {
               >
                 FEED
               </Text>
-              
             </View>
           ),
         }}
@@ -203,11 +202,12 @@ const TabNavigator = () => {
                 backgroundColor: focused ? "white" : "",
               }}
             >
-              <Octicons
-                name="person"
-                size={32}
+              <FontAwesome5
+                name="user"
+                size={30}
                 color={focused ? "black" : "white"}
               />
+
               <Text
                 style={{
                   fontFamily: "Lexend_400Regular",
@@ -228,7 +228,6 @@ const TabNavigator = () => {
 };
 
 export default function App() {
-
   //Chargement de la police
   const [fontsLoaded] = useFonts({
     Lexend_900Black,

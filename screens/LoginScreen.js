@@ -70,15 +70,6 @@ const LoginScreen = () => {
   // Initialisation de useNavigation
   const navigation = useNavigation();
 
-  //Hook pour rediriger vers Username si on est connecté
-  // useEffect(() => {
-  //   const unsubscribe = auth.onAuthStateChanged((user) => {
-  //     if (user) {
-  //       navigation.navigate("Username");
-  //     }
-  //   });
-  //   return unsubscribe;
-  // }, []);
 
   //Fonction pour s'inscrire
   const handleSignup = async () => {
@@ -291,6 +282,7 @@ const LoginScreen = () => {
               </Text>
               <TextInput
                 placeholder="Email"
+                autoCapitalize='none'
                 placeholderTextColor={"#808080"}
                 value={email}
                 onChangeText={(text) => setEmail(text)}
