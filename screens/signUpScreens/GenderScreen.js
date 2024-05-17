@@ -56,11 +56,8 @@ export default function GenderScreen({ navigation }) {
 
     if (id) {
       await updateDoc(doc(db, "users", id), {
-        Gender: gender,
+        gender: gender,
       })
-        // .then(() => {
-        //   console.log("Man gender updated");
-        // })
         .catch((error) => {
           console.log("Man gender not updated : ", error);
         });
@@ -79,11 +76,8 @@ export default function GenderScreen({ navigation }) {
 
     if (id) {
       await updateDoc(doc(db, "users", id), {
-        Gender: gender,
+        gender: gender,
       })
-        .then(() => {
-          console.log("Woman gender updated");
-        })
         .catch((error) => {
           console.log("Woman gender not updated : ", error);
         });
@@ -102,11 +96,8 @@ export default function GenderScreen({ navigation }) {
 
   if (id) {
     await updateDoc(doc(db, "users", id), {
-      Gender: gender,
+      gender: gender,
     })
-      .then(() => {
-        console.log("Woman gender updated");
-      })
       .catch((error) => {
         console.log("Woman gender not updated : ", error);
       });

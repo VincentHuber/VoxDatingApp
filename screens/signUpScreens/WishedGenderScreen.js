@@ -113,7 +113,7 @@ export default function WishedGenderScreen({ navigation }) {
 
       if (id) {
         await updateDoc(doc(db, "users", id), {
-          WishedGender: gender,
+          wishedGender: gender,
         })
           .then(() => {
             navigation.navigate("City");
